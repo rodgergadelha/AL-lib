@@ -5,16 +5,15 @@
 #include "headers/matrix.h"
 
 int main() {
-    Matrix m(5, 5);
-    Matrix n(5, 5);
-    Matrix i = Matrix::identity(5, 5);
-    m.setElementAt(0, 0, 1);
-    m.setElementAt(0, 1, 2);
-    Matrix p = m.transp();
-
+    Matrix m(3, 3);
+    m.elements[0] = {1, 2, 3};
+    m.elements[1] = {4, 5, 6};
+    m.elements[2] = {7, 8, 9};
     m.print();
-    std::cout << "\n\n";
-    p.print();
+    m.mult_row(0, 5);
+    cout << endl;
+    m.print();
+    cout << endl;
 
     return 0;
 }
